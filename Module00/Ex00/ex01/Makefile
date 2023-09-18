@@ -1,29 +1,36 @@
-NAME = Phonebook
-
-SRC = PhoneBook.cpp Phone_Book_Functions.cpp
-
-OBJS = ${SRC:.cpp=.o}
-
-INCLUDE = -I .
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dbraga-b <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/08/02 13:11:05 by dbraga-b          #+#    #+#              #
+#    Updated: 2023/08/02 13:11:08 by dbraga-b         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 CC = c++
-RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+RM = rm -rf
+NAME = PhoneBook
 
-.cpp.o:
-		${CC} ${CPPFLAGS} ${INCLUDE} -c $< -o ${<:.cpp=.o}
+SRCS = main.cpp PhoneBook.cpp Contact.cpp
+OBJS = $(SRCS:.cpp=.o)
 
-$(NAME): ${OBJS}
-		${CC} ${CPPFLAGS} ${INCLUDE} ${OBJS} -o ${NAME}
+all: $(NAME)
 
-all:	${NAME}
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -I . $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	${CC} ${CFLAGS} -I . -c $< -o $@
 
 clean:
-		${RM} ${OBJS}
+	$(RM) $(OBJS)
 
-fclean:	clean
-		${RM} ${NAME}
+fclean: clean
+	$(RM) $(NAME)
 
-re: clean all
+re: fclean all
 
-.PHONY: all clean re
