@@ -1,8 +1,4 @@
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
-
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#pragma once
 #include <iostream>
 #include <string>
 
@@ -13,17 +9,6 @@ class Weapon
 	public:
 		Weapon(std::string _type);
 		~Weapon();
-		std::string *getType();
+		std::string getType();
 		void setType(std::string _type);
 };
-
-Weapon::Weapon(std::string _type)
-{
-    this->_type = _type;
-}
-
-Weapon::~Weapon()
-{
-}
-
-#endif

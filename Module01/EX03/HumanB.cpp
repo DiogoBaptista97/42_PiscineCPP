@@ -19,3 +19,7 @@ void HumanB::attack()
     else
         std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
 }
+
+HumanB::~HumanB()
+{
+}
