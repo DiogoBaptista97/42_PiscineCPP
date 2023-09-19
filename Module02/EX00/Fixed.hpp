@@ -12,6 +12,7 @@ class Fixed
         Fixed(void);
         ~Fixed(void);
         Fixed(const Fixed &copy);
-        int getRawBits(void);
-
+        int getRawBits(void) const;
+        //operator overloading
+        Fixed& operator=(const Fixed &copy);
 };
