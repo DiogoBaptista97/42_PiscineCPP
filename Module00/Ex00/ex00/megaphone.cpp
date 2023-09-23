@@ -1,10 +1,8 @@
 #include <iostream>
 #include <cstring>
-
-//to upper
-
-
-int main(int argc, char** argv){
+\
+int main(int argc, char **argv)
+{
 	
 	int i = 0;
 	int j = 0;
@@ -25,6 +23,14 @@ int main(int argc, char** argv){
 			j++;
 		}
 	}
-	std::cout << std::endl;
+
+	i = 1;
+	while (argv[i])
+	{
+		std::cout << argv[i];
+		i++;
+	}
+	
+	//std::cout << std::endl;
 	return(0);
 }
