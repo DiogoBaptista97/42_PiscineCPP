@@ -1,6 +1,6 @@
 NAME = Fixed
 
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp ./source/Fixed.cpp
 		
 
 OBJS = ${SRC:.cpp=.o}

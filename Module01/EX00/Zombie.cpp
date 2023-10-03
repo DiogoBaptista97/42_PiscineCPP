@@ -7,24 +7,15 @@ Zombie::Zombie()
 
 Zombie::Zombie(std::string name)
 {
-    this->_name = name;
     std::cout << "Zombie created" << std::endl;
-}
-
-Zombie* newZombie(std::string name)
-{
-    return (new Zombie(name));
-}
-void randomChump(std::string name)
-{
-    Zombie zombie(name);
-    zombie.announce();
+    this->_name = name;
 }
 
 Zombie::~Zombie()
 {
     std::cout << "Zombie ";
-    std::cout << this->_name, std::cout << " Destroyed" <<std::endl;
+    std::cout << this->_name;
+    std::cout << " Destroyed" <<std::endl;
 }
 
 void Zombie::announce(void)

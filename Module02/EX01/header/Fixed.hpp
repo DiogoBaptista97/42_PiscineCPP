@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 class Fixed
 {
@@ -21,3 +22,4 @@ class Fixed
 		Fixed& operator=(const Fixed &copy);
 };
 
+std::ostream & operator<<(std::ostream & out, Fixed const &fixed);

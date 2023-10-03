@@ -1,28 +1,14 @@
-#include "Fixed.hpp"
+#include "../header/Fixed.hpp"
 
 Fixed::Fixed(void)
 {
-	std::cout << "Default constructor called" << std::endl;
-	this->_fixed = 0;
+    std::cout << "Default constructor called" << std::endl;
+    this->_fixed = 0;
 }
-
-Fixed::Fixed(const int bit)
-{
-	std::cout << "Const int constructor called" << std::endl;
-	this->_fixed = bit;
-}
-
-Fixed::Fixed(const float bit)
-{
-	std::cout << "Const Float constructor called" << std::endl;
-	this->_fixed = bit;
-}
-
-
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &copy)

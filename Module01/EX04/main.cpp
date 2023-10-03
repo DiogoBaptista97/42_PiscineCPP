@@ -19,7 +19,7 @@ std::string	_replace(std::string _Find, std::string _Replace, std::string line)
 	return (line);
 }
 
-int main(int argc, char **argv)
+int main(int argc, char **argv) 
 {
 	if (argc != 4)
 	{
@@ -31,10 +31,8 @@ int main(int argc, char **argv)
 	std::string _Replace = argv[3];
 	std::string line;
 
-//	myfile.open();
 	if (myfile.is_open())
 	{
-		std::cout << "in\n";
     	while (getline(myfile, line) )
     	{
 			std::cout << "Before ";
