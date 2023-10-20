@@ -1,0 +1,30 @@
+NAME = polymorphism
+
+SRC = ./source/main.cpp ./source/Animal.cpp ./source/Cat.cpp ./source/Dog.cpp ./source/WrongAnimal.cpp ./source/WrongCat.cpp
+		
+
+OBJS = ${SRC:.cpp=.o}
+
+INCLUDE = -I .
+
+CC = c++
+RM = rm -f
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+
+.cpp.o:
+		${CC} ${CPPFLAGS} ${INCLUDE} -c $< -o ${<:.cpp=.o}
+
+$(NAME): ${OBJS}
+		${CC} ${CPPFLAGS} ${INCLUDE} ${OBJS} -o ${NAME}
+
+all:	${NAME}
+
+clean:
+		${RM} ${OBJS}
+
+fclean:	clean
+		${RM} ${NAME}
+
+re: clean all
+
+.PHONY: all clean re
