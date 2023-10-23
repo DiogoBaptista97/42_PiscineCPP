@@ -1,7 +1,12 @@
-NAME = polymorphism
+NAME = AMateria
 
-SRC = ./source/main.cpp ./source/NewAnimal.cpp ./source/Cat.cpp ./source/Dog.cpp ./source/Brain.cpp
-		
+SRC = ./source/main.cpp \
+	./source/AMateria.cpp \
+	./source/Ice.cpp \
+	./source/Cure.cpp \
+	./source/Character.cpp \
+	./source/MateriaSource.cpp
+
 
 OBJS = ${SRC:.cpp=.o}
 

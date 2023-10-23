@@ -19,7 +19,7 @@ AMateria::~AMateria()
 
 AMateria::AMateria(std::string const & type) : type(type)
 {
-	std::cout << "Deep Copy constructor"
+	std::cout << "Deep Copy constructor" << std::endl;
 }
 
 AMateria& AMateria::operator= (const AMateria &copy)
@@ -31,3 +31,19 @@ AMateria& AMateria::operator= (const AMateria &copy)
 	}
 	return (*this);
 }
+
+std::string const & AMateria::getType() const
+{
+	return (this->type);
+}
+
+void AMateria::use(ICharacter &target)
+{
+	std::cout << "Target is: " << target.getName() << std::endl;
+	//nothing
+}
+
+/* AMateria* AMateria::clone() const = 0
+{
+	return (*this->)
+} */
