@@ -2,15 +2,13 @@
 
 Cure::Cure() : AMateria("cure")
 {
-	std::cout << "Default Cure Constructer" << std::endl;
 }
 
 Cure::~Cure()
 {
-		std::cout << "Default Cure Deconstructer" << std::endl;
 }
 
-Cure::Cure(const Cure  &src)
+Cure::Cure(const Cure  &src) : AMateria(src)
 {
 	if (this != &src)
 		*this = src;
@@ -32,5 +30,5 @@ AMateria* Cure::clone() const
 
 void Cure::use(ICharacter &target)
 {
-	std::cout << "*heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

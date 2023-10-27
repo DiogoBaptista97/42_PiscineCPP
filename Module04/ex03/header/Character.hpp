@@ -17,7 +17,6 @@ class Character : public ICharacter
 		~Character();
 		Character(const Character &src);
 		Character& operator =(const Character &src);
-		//~ICharacter();
 		std::string const &getName() const;
 		void equip(AMateria *m);
 		void unequip(int idx);

@@ -1,16 +1,14 @@
 #include "../header/Ice.hpp"
 
-Ice::Ice() : AMateria("Ice")
+Ice::Ice() : AMateria("ice")
 {
-	std::cout << "Default Ice Constructer" << std::endl;
 }
 
 Ice::~Ice()
 {
-	std::cout << "Default Ice Deconstructer" << std::endl;
 }
 
-Ice::Ice(const Ice &src)
+Ice::Ice(const Ice &src) : AMateria(src)
 {
 	if (this != &src)
 		*this = src;

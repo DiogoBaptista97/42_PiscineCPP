@@ -17,8 +17,7 @@ MateriaSource::MateriaSource(const MateriaSource &src)
 {
 	if(this != &src)
 	{
-		for(int i = 0; i < 4; i++)
-			this->slot[i] = src.slot[i];
+		*this = src;
 	}
 }
 
@@ -27,32 +26,35 @@ MateriaSource & MateriaSource::operator=(const MateriaSource &src)
 	if(this != &src)
 	{
 		for(int i = 0; i < 4; i++)
-			this->slot[i] = src.slot[i];	
+		{
+			if (src.slot[i])
+				this->slot[i] = src.slot[i]->clone();
+			else
+				this->slot[i] = NULL;
+		}
 	}
 	return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria *src)
 {
-	int i;
-
-	i = 0;
-	while(this->slot[i] != NULL)
-		i++;
-	if(i < 4)
-		this->slot[i] = src;
+	for(int i = 0; i < 4; i++)
+	{
+		if(this->slot[i] == NULL)
+		{
+			std::cout << "Learned " << src->getType() << "at p" << i << std::endl;
+			this->slot[i] = src->clone();
+			break;
+		}
+	}
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
-	int i = 0;
-
-	while(i < 4)
+	for(int i = 0; i < 4; i++)
 	{
-		std::cout << "he" << i << std::endl;
-		if (this->slot[i] && this->slot[i]->getType() == type)
+		if(this->slot[i] && this->slot[i]->getType() == type)
 			return this->slot[i]->clone();
-		i++;
 	}
 	return NULL;
 }
