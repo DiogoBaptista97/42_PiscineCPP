@@ -1,6 +1,6 @@
 NAME = polymorphism
 
-SRC = ./source/main.cpp ./source/NewAnimal.cpp ./source/Cat.cpp ./source/Dog.cpp ./source/Brain.cpp
+SRC = ./source/main.cpp ./source/AAnimal.cpp ./source/Cat.cpp ./source/Dog.cpp ./source/Brain.cpp
 		
 
 OBJS = ${SRC:.cpp=.o}

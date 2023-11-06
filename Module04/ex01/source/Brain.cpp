@@ -22,3 +22,4 @@ Brain& Brain::operator=(const Brain &copy)
 		this->ideas[i] = copy.ideas[i];
 	return (*this);
 }
+

@@ -9,7 +9,7 @@ class WrongCat : public WrongAnimal
 		WrongCat();
 		~WrongCat();
 		WrongCat(const WrongCat &copy);
-		void makeSound() const;
+		virtual void makeSound() const;
 		WrongCat& operator=(const WrongCat &copy);
 };
 #endif //WRONGCAT_HPP

@@ -20,7 +20,6 @@ Cat::Cat(const Cat &copy)
 Cat& Cat::operator=(const Cat &copy)
 {
 	this->type = copy.type;
-	
 	this->brain = new Brain(*copy.brain);
 	return (*this);
 }

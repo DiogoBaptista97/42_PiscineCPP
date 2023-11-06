@@ -19,7 +19,7 @@ Animal::~Animal()
 
 void Animal::makeSound() const
 {
-		std::cout << "animals dont make sound" << std::endl;
+    std::cout << "Animal makeSound called" << std::endl;
 }
 
 std::string Animal::getType() const

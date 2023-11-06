@@ -3,26 +3,37 @@
 
 MateriaSource::MateriaSource()
 {
+	std::cout << "IMateriaSource Default constructer" << std::endl;
+
 	for(int i = 0; i < 4; i++)
 		this->slot[i] = NULL;
 }
 
 MateriaSource::~MateriaSource()
 {
+	std::cout << "IMateriaSource Default Deconstructer" << std::endl;
 	for(int i = 0; i < 4; i++)
-		delete this->slot[i];
+		if (this->slot[i])
+			delete this->slot[i];
 }
 
 MateriaSource::MateriaSource(const MateriaSource &src)
 {
+	std::cout << "IMateriaSource copy constructer" << std::endl;
+
 	if(this != &src)
+<<<<<<< HEAD
+		*this = src;
+=======
 	{
 		*this = src;
 	}
+>>>>>>> e707f627fbacbbcae93591e9cc3c6dfc98d16d87
 }
 
 MateriaSource & MateriaSource::operator=(const MateriaSource &src)
 {
+	std::cout << "IMateriaSource assignment constructer" << std::endl;
 	if(this != &src)
 	{
 		for(int i = 0; i < 4; i++)
@@ -53,7 +64,11 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 {
 	for(int i = 0; i < 4; i++)
 	{
+<<<<<<< HEAD
+		if (this->slot[i] && this->slot[i]->getType() == type)
+=======
 		if(this->slot[i] && this->slot[i]->getType() == type)
+>>>>>>> e707f627fbacbbcae93591e9cc3c6dfc98d16d87
 			return this->slot[i]->clone();
 	}
 	return NULL;

@@ -1,6 +1,6 @@
 #include "../header/Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : AAnimal("Dog")
 {
 	std::cout << "Default Dog Constructor" << std::endl;
 	this->brain = new Brain();
@@ -22,4 +22,9 @@ Dog& Dog::operator=(const Dog &copy)
 	this->type = copy.type;
 	this->brain = new Brain(*copy.brain);
 	return (*this);
+}
+
+void Dog::makeSound() const
+{
+	std::cout << "Au AU" << std::endl;
 }

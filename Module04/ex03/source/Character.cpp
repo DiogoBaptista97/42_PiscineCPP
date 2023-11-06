@@ -32,6 +32,17 @@ Character& Character::operator=(const Character &src)
 {
 	if (this != &src)
 	{
+<<<<<<< HEAD
+		for(int i = 0; i < 4; i++)
+		{
+			delete this->inv[i];
+			if (src.inv[i])
+				this->inv[i] = src.inv[i]->clone();
+			else
+				this->inv[i] = NULL;
+		}
+=======
+>>>>>>> e707f627fbacbbcae93591e9cc3c6dfc98d16d87
 		this->name = src.name;
 		for(int i = 0; i < 4; i++)
 		{
@@ -52,11 +63,20 @@ void Character::equip(AMateria *m)
 {
 	for(int i = 0; i < 4; i++)
 	{
+<<<<<<< HEAD
+		if(this->inv[i] == NULL)
+		{
+			this->inv[i] = m;
+			return ;
+		}
+		i++;
+=======
 		if (this->inv[i] == NULL)
 		{
 			this->inv[i] = m;
 			break;
 		}
+>>>>>>> e707f627fbacbbcae93591e9cc3c6dfc98d16d87
 	}
 }
 
