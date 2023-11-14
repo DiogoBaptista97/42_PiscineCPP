@@ -4,14 +4,16 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include "AForm.hpp"
 
+class AForm;
 class Bureaucrat
 {
 	private:
 		const std::string	name;
 		int					grade;
-		Bureaucrat();
 	public:
+		Bureaucrat();
 		Bureaucrat(const std::string &name, int grade);
 		~Bureaucrat();
 		Bureaucrat& operator=(const Bureaucrat &copy);
@@ -20,6 +22,8 @@ class Bureaucrat
 		void setGrade(int i);
 		void incrementGrade();
 		void decrementGrade();
+		void signForm(AForm &form);
+		void executeForm(AForm const & form);
 		//class exceptions and nested classes
 		class GradeTooHighException : public std::exception
 		{
