@@ -1,0 +1,29 @@
+NAME = Intern
+
+SRC = ./source/main.cpp ./source/Bureaucrat.cpp ./source/AForm.cpp ./source/ShrubberyCreationForm.cpp ./source/RobotomyRequestForm.cpp ./source/PresidentialPardonForm.cpp ./source/Intern.cpp
+
+OBJS = ${SRC:.cpp=.o}
+
+INCLUDE = -I .
+
+CC = c++
+RM = rm -f
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+
+.cpp.o:
+		${CC} ${CPPFLAGS} ${INCLUDE} -c $< -o ${<:.cpp=.o}
+
+$(NAME): ${OBJS}
+		${CC} ${CPPFLAGS} ${INCLUDE} ${OBJS} -o ${NAME}
+
+all:	${NAME}
+
+clean:
+		${RM} ${OBJS}
+
+fclean:	clean
+		${RM} ${NAME}
+
+re: clean all
+
+.PHONY: all clean re
