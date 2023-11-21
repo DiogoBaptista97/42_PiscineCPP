@@ -10,8 +10,20 @@ int main(void)
 		std::cout << bur << std::endl;
 		bur.incrementGrade();
 		std::cout << bur << std::endl;
-		bur.incrementGrade();
-		std::cout << bur << std::endl;
+/* 		bur.incrementGrade();
+		std::cout << bur << std::endl; */
+	}
+ 	catch(Bureaucrat::GradeTooHighException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch(Bureaucrat::GradeTooLowException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try 
+	{
+		Bureaucrat bur("Diogo", 160);
 	}
  	catch(Bureaucrat::GradeTooHighException &e)
 	{

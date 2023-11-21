@@ -24,6 +24,10 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
 	return (*this);
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name(copy.name), grade(copy.grade)
+{
+}
+
 Bureaucrat::~Bureaucrat()
 {
 }

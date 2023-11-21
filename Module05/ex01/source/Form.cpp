@@ -15,7 +15,9 @@ Form::Form(const std::string& name, const int requiredGradeToSign)
 }
 
 Form::Form(const Form& src)
-	: name(src.name), isSigned(src.isSigned), gradeToSign(src.gradeToSign), gradeToExec(src.gradeToExec) {}
+	: name(src.name), isSigned(src.isSigned), gradeToSign(src.gradeToSign), gradeToExec(src.gradeToExec)
+{
+}
 
 Form::~Form()
 {

@@ -8,6 +8,7 @@ int main(void)
 
     try {
         Bureaucrat bureaucrat("Diogo",10);
+		std::cout << bureaucrat << std::endl;
         Form form("Avaluation", 2);
         std::cout << form << std::endl;
         bureaucrat.signForm(form);

@@ -12,9 +12,10 @@ class Bureaucrat
 	private:
 		const std::string	name;
 		int					grade;
-	public:
 		Bureaucrat();
+	public:
 		Bureaucrat(const std::string &name, int grade);
+		Bureaucrat(const Bureaucrat &copy);
 		~Bureaucrat();
 		Bureaucrat& operator=(const Bureaucrat &copy);
 		std::string getName() const;
