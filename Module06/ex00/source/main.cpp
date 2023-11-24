@@ -1,36 +1,13 @@
 #include <string>
 #include <iostream>
-#include "../header/Bureaucrat.hpp"
+#include "../header/ScalarConverter.hpp"
 
-int main(void)
+int main(int argc, char **argv)
 {
-	try 
+	if (argc != 2)
 	{
-		Bureaucrat bur("Diogo", 2);
-		std::cout << bur << std::endl;
-		bur.incrementGrade();
-		std::cout << bur << std::endl;
-/* 		bur.incrementGrade();
-		std::cout << bur << std::endl; */
+		std::cout << "More than one input" << std::endl;
+		return 1;
 	}
- 	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	catch(Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try 
-	{
-		Bureaucrat bur("Diogo", 160);
-	}
- 	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	catch(Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	ScalarConverter temp(argv[1]);
 }

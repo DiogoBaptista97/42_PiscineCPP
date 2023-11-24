@@ -1,6 +1,6 @@
-NAME = bureaucrat
+NAME = ScalarConverter
 
-SRC = ./source/main.cpp ./source/Bureaucrat.cpp
+SRC = ./source/main.cpp ./source/ScalarConverter.cpp
 
 OBJS = ${SRC:.cpp=.o}
 
