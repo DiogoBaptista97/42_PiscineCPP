@@ -1,6 +1,6 @@
-NAME = ScalarConverter
+NAME = swap
 
-SRC = ./source/main.cpp ./source/ScalarConverter.cpp
+SRC = ./source/main.cpp
 
 OBJS = ${SRC:.cpp=.o}
 
