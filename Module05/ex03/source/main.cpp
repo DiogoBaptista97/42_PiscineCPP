@@ -15,8 +15,8 @@ int main(void)
 		AForm* rrf;
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-		//Bureaucrat bureaucrat("Diogo", 4); // change grade between  26 and higher to get the error
-		//bureaucrat.signForm(*rrf);
+		Bureaucrat bureaucrat("Diogo", 4); // change grade between  26 and higher to get the error
+		bureaucrat.signForm(*rrf);
 	}
 /* 	try {
 		Bureaucrat bureaucrat("Diogo", 4); // change grade between  26 and higher to get the error

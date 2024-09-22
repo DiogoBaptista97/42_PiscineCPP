@@ -53,7 +53,8 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
 
 	for(int i = 0; i < 3; i++)
 	{
-		delete formTypes[i];
+		if (form != formTypes[i])
+			delete formTypes[i];
 	}
 	std::cout << "hi " << std::endl;
 	if (form != NULL)
