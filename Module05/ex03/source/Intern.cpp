@@ -50,7 +50,7 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
 	}
 	if (form != NULL)
 	{
-		std::cout << target << "Intern creates " << form->getName();
+		std::cout << target << "Intern creates " << form->getName() << std::endl;
 	}
 
 	return form;
