@@ -12,7 +12,7 @@ int main(void)
 
 	try {
 		Bureaucrat bureaucrat("Diogo", 4); // change grade between  26 and higher to get the error
- 		ShrubberyCreationForm form1("Shrubbery");
+ 		ShrubberyCreationForm form1("ShrubberyForm");
 		RobotomyRequestForm form2("Robotomy");
 		PresidentialPardonForm form3("President");
 

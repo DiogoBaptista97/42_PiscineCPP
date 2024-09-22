@@ -13,24 +13,18 @@ int main(void)
 /* 		bur.incrementGrade();
 		std::cout << bur << std::endl; */
 	}
- 	catch(Bureaucrat::GradeTooHighException &e)
+ 	catch(std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	catch(Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	std::cout << "hi" << std::endl;
 	try 
 	{
 		Bureaucrat bur("Diogo", 160);
 	}
- 	catch(Bureaucrat::GradeTooHighException &e)
+ 	catch(std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	catch(Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+
 }

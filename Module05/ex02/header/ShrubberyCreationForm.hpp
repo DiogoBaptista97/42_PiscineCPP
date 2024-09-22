@@ -5,6 +5,7 @@
 #include <iostream>
 #include <exception>
 #include "AForm.hpp"
+#include <fstream>
 
 class ShrubberyCreationForm : public AForm
 {
@@ -17,6 +18,8 @@ class ShrubberyCreationForm : public AForm
 	ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
 	void execute(Bureaucrat const & executor) const;
+	std::string getTargetName() const;
+
 };
 
 #endif // SHRUBBERYCREATIONFORM_HPP

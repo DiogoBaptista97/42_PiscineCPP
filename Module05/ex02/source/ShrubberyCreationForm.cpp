@@ -29,11 +29,30 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 		throw AForm::GradeTooLowException();
 	else
 	{
-		std::cout << "    *" << std::endl;
-		std::cout << "   ***" << std::endl;
-		std::cout << "  *****" << std::endl;
-		std::cout << " *******" << std::endl;
-		std::cout << "*********" << std::endl;
-		std::cout << "   |||" << std::endl;
+		std::ofstream file;
+		std::string name;
+		const char * targetName;
+
+		name = getTargetName();
+		name.append("_shrubbery.txt");
+		targetName = name.c_str();
+		file.open(targetName);
+
+		if (!file.is_open())
+		{
+			std::cout << "error creating file" << std::endl;
+		}
+
+		file << "    *" << std::endl;
+		file << "   ***" << std::endl;
+		file << "  *****" << std::endl;
+		file << " *******" << std::endl;
+		file << "*********" << std::endl;
+		file << "   |||" << std::endl;
 	}
+}
+
+std::string ShrubberyCreationForm::getTargetName() const
+{
+	return this->target;
 }

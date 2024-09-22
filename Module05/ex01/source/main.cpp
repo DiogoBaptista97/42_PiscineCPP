@@ -14,7 +14,6 @@ int main(void)
         bureaucrat.signForm(form);
         std::cout << form << std::endl;
 		std::cout << std::endl;
-		std::cout << bureaucrat << std::endl;
     }
 	catch (std::exception &e)
 	{
